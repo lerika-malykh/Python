@@ -22,29 +22,32 @@
 
 # 16.Задайте список из n чисел последовательности (1+1/n)^n и выведите на экран их сумму.
 
-# n = int (input('Введите число n: '))
-# list = []
-# summa = 0
-# for i in range(1, n+1):
-#     list.append(round((1+1/i)**i, 2))
-# print(*list, sep=', ')
-# for i in range(1, n+1):
-#     result = round((1+1/i)**i, 2)
-#     summa += result
-# print(f"Сумма членов последовательности =", summa)
+n = int (input('Введите число n: '))
+if n != 0:
+    list = []
+    summa = 0
+    for i in range(1, n+1):
+        list.append(round((1+1/i)**i, 2))
+    print(*list, sep=', ')
+    for i in range(1, n+1):
+        result = round((1+1/i)**i, 2)
+        summa += result
+    print(f"Сумма членов последовательности =", summa)
+else:
+    print('Ошибка! Деление на 0!')
 
 # 17.Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на указанных позициях.
 # (Позиции хранятся в файле file.txt в одной строке одно число.)
 
-from unittest import result
-list = [-7, 1, 2, 3, 4, 5, 7]
-x = int(input('Введите 1 позицию элемента от 0 до 6: '))
-y = int(input('Введите 2 позицию элемента от 0 до 6: '))
-z = int(input('Введите 3 позицию элемента от 0 до 6: '))
+# from unittest import result
+# list = [-7, 1, 2, 3, 4, 5, 7]
+# x = int(input('Введите 1 позицию элемента от 0 до 6: '))
+# y = int(input('Введите 2 позицию элемента от 0 до 6: '))
+# z = int(input('Введите 3 позицию элемента от 0 до 6: '))
 
-for i in range(len(list)):
-    result = list[x -1]*list[y - 1]*list[z -1]
-print(f'Произведение элементов {list[x -1]} * {list[y -1]} * {list[z -1]} =', result)
+# for i in range(len(list)):
+#     result = list[x -1]*list[y - 1]*list[z -1]
+# print(f'Произведение элементов {list[x -1]} * {list[y -1]} * {list[z -1]} =', result)
 
 # 18.Реализуйте алгоритм перемешивания списка.
 
