@@ -18,7 +18,7 @@ welcome_text = ('Приветствую Вас, маленькие любите�
 print(welcome_text)
 
 message = ['твоя очередь', 'да бери уже', 'бери больше', 'не корову проигрываешь',
-           'бери быстрее', 'да харош, так долго думать уже']
+           'бери быстрее', 'да хорош, так долго думать']
 
 def player_vs_player():
     candies_total = 2021
@@ -44,7 +44,7 @@ def player_vs_player():
             step = int(input(f'\n{choice(message)} {lucky} = '))
             if step > candies_total or step > max_take:
                 step = int(input(
-                    f'\nНе жадничай можно взять только {max_take} конфет {lucky}, попробуй еще раз: '))
+                    f'\nНе жадничай, можно взять только {max_take} конфет {lucky}, попробуй еще раз: '))
             candies_total = candies_total - step
         if candies_total > 0:
             print(f'\nна кону еще {candies_total}')
@@ -56,7 +56,7 @@ def player_vs_player():
             step = int(input(f'\n{choice(message)}, {loser} '))
             if step > candies_total or step > max_take:
                 step = int(input(
-                    f'\nНе жадничай можно взять только {max_take} конфет {loser}, попробуй еще раз: '))
+                    f'\nНе жадничай, можно взять только {max_take} конфет {loser}, попробуй еще раз: '))
             candies_total = candies_total - step
         if candies_total > 0:
             print(f'\nна кону еще {candies_total}')
