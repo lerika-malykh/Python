@@ -18,4 +18,16 @@
         <Phone_number>96325</Phone_number>
         <Info>удаленка</Info>
     </contact>
+    <contact>
+        <Last_name>Странный</Last_name>
+        <Name>Василий</Name>
+        <Phone_number>14789</Phone_number>
+        <Info>домашний</Info>
+    </contact>
+    <contact>
+        <Last_name>Pitt</Last_name>
+        <Name>Brad</Name>
+        <Phone_number>77755</Phone_number>
+        <Info>work</Info>
+    </contact>
 </contacts>

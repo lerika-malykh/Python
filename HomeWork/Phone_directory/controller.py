@@ -1,6 +1,7 @@
 from read_contact import read_contact
 from save_contact import save_to_csv
 from export_to_xml import export_to_xml
+from logger import log_info
 
 def button_click():
     print('Выберите необходимую операцию:', '1 - ввод данных "Фамилия, Имя, телефон, описание"',
@@ -8,6 +9,7 @@ def button_click():
           sep='\n')
 
     operation_select = int(input())
+    log_info(operation_select)
     if operation_select == 1:
         soname = input('Введите фамилию: ')
         name = input('Введите имя: ')
