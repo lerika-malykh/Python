@@ -39,5 +39,5 @@ for i in range(n):
     words.update(input('Введите текст: ').split(' '))
 if '' in words:
     words.remove('')
-print(f'Количество слов в тексте - ', len(words))
+print(f'Количество слов в тексте: ', len(words))
 
