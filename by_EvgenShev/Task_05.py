@@ -1,22 +1,19 @@
-# Для аналитиков:
-# f(x) = -12x^4*sin(cos(x))-18x^3+5x^2+10x-30
+# f(x) = -12x^4*sin(cos(x)) - 18x^3+5x^2 + 10x - 30
 # Определить корни
 # Найти интервалы, на которых функция возрастает
 # Найти интервалы, на которых функция убывает
 # Построить график
 # Вычислить вершину
 # Определить промежутки, на котором f > 0
-# Определить промежутки, на котором f < 0
+# Определить промежутки, на которых f < 0
 
-import numpy as np
+import sympy
 from sympy import *
+import numpy as np
 from scipy.optimize import fsolve
-from sympy.plotting import plot
-init_printing()
 
-# interval = np.arange(-30,30) #не применила
-x = Symbol('x')
-function_x = sympify('-12*x^4*sin(cos(x)) - 18*x^3 + 5*x^2 + 10*x - 30')
+x = sympy.symbols('x')
+y = -12 * x ** 4 * sin(cos(x)) - 18 * x ** 3 + 5 * x ** 2 + 10 * x - 30
 
 segment = list(map(float, input('Задайте через пробел начало и конец отрезка: ').split()))
 left_point = min(segment)
@@ -24,6 +21,7 @@ right_point = max(segment)
 
 def f(x):
     return - 12 * x ** 4 * np.sin(np.cos(x)) - 18 * x ** 3 + 5 * x ** 2 + 10 * x - 30
+
 
 number = left_point
 roots = []
@@ -42,6 +40,7 @@ while number < right_point:
     number += 1
 
 print(f'Roots: {roots}')
+
 
 def search_top(left, right):
     array = []
@@ -71,7 +70,7 @@ else:
     [print(f'Координаты вершин: ({item[1]}, {item[0]})') for item in top]
 
     if len(top) < 2:
-        print('не достаточно данных')
+        print('не достаточно дынных')
     else:
         for i in range(len(top) - 1):
             if top[i][0] > top[i + 1][0]:
@@ -80,13 +79,4 @@ else:
                 print(f'Возрастает при x {top[i][1], top[i + 1][1]}')
 
 print('Погрешность вычислений = 0.1')
-
-# Построение графика
-plot(function_x)
-  
-# --------------------------------------
-# Еще способ нахождения корней, но не подходит, тк в коэффициенты не вставить sin и cos:
-
-# coeff = [-12, -18, 5, 10, 30]  #коэффициенты уравнения без тригонометрической функции
-# print(np.roots(coeff))         #находит корни    
 
